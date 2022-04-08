@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Traversal</title>
+    <style>
+        body {
+    margin: 50px;
+    font-family: arial;
+    background-color: #666;
+}
+
+.container {
+    width: 900px;
+    margin: auto;
+}
+
+.card {
+    display: inline-block;
+    width: 220px;
+    padding: 0 80px;
+    height: 80px;
+    font-size: 16px;
+    line-height: 80px;
+    border-radius: 40px;
+    background-color: #f1f1f1;
+    margin: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.card img {
+    float: left;
+    margin: 0 10px 0 -80px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.card .nama, .card .telp {
+    display: block;
+    line-height: 20px;
+    padding: 0 5px;
+}
+
+.card .nama {
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.card .telp {
+    margin-left: 20px;
+    margin-top: 5px;
+    font-size: 16px;
+    color: #aaa;
+}
+
+.card .close {
+    font-size: 24px;
+    font-weight: bold;
+    color: #999;
+    position: absolute;
+    top: 0;
+    right: 30px;
+    cursor: pointer;
+}
+
+.card:hover .close {
+    color: red;
+}
+
+.card a{
+    text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+      <img src="img/sandhika.jpeg" width="96" height="96">
+      <span class="nama">Abi</span>
+      <span class="telp">08123456789</span>
+      <a href="" class="close">×</a>
+    </div> 
+    <div class="card">
+      <img src="img/sandhika.jpeg" width="96" height="96">
+      <span class="nama">Umi</span>
+      <span class="telp">08123456789</span>
+      <span class="close">×</span>
+    </div> 
+    <div class="card">
+      <img src="img/sandhika.jpeg" width="96" height="96">
+      <span class="nama">azhar</span>
+      <span class="telp">08123456789</span>
+      <span class="close">×</span>
+    </div> 
+    <div class="card">
+      <img src="img/sandhika.jpeg" width="96" height="96">
+      <span class="nama">zeline</span>
+      <span class="telp">08123456789</span>
+      <span class="close">×</span>
+    </div> 
+
+</div>
+
+<script>
+
+    //ini untuk satu aja, kalau banyak enak pakai foreach
+    // const getCard = document.querySelector('.card');
+    // const getClose = document.querySelector('.close');
+    // getClose.onclick = (function(){
+    //     getCard.style.display = 'none';    
+    // });
+
+    const getCard = document.querySelectorAll('.close');
+    getCard.forEach(function(el){
+        el.addEventListener('click', function(e){
+            e.target.parentElement.style.display = "none";   
+            e.preventDefault();     
+            
+        });
+    });
+
+    //dome traversal
+    // - parentNode = mengambil parent div tapi dengan Node
+    // - parentElement = mengambil parent div dengan langsung bentuk Element
+    // - nextSibling = mengambil saudaranya satu parent bentuknya node
+    // - nextElementSibling = mengambil saudaranya satu parent bentuknya element
+    // - previousSibling = mengambil prev saudaranya bentuknya node
+    // - previousElementSibling = mengmbil prev saudaranya bentuknya element
+    
+    //===================
+
+    //prevent default
+    // menghentikan aktifitas defaultnya, ex. tombol a href dan tidak akan di parsing
+    // penggunaanya adalah e.preventDefault(); 
+</script>
+</body>
+</html>

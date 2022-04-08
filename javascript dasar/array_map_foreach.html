@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Foreach dan Map</title>
+</head>
+<body>
+    <script>
+        var namaMhs = ['Azizan', 'Nur', 'Rohman'];
+        // namaMhs.forEach(function(e,v,c){
+        //     console.log(e+v+c);
+        // });
+        
+
+        var a = namaMhs.map(function(e, v){
+            return 'nama mahasiswa ke - '+ v +' adalah: '+ e;
+        });
+        console.log(a.join());
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+PROGRAMERS ZAMAN NOW
+================================
+- Konfersi string dan number
+kalau kita mau menolerin data number pakai parseInt kalau tidak pakai number, karena parseInt akan mengabaikan nilai dibelakangnya dan number harus mutlat number
+================================
+- Type data array
+kalau ingin menghapus nilai dalam array bisa gunakan "delete.names[3]"
+================================
+- Operator in 
+in operator hanya akan mengecek seubah property atau index ada atau tidak
+jadi walaupun nilai property atau index nya undifined / null, maka akan dianggap ada
+ex 
+<script>
+const person = {
+	firtname: 'azizan',
+	lastname: 'rohman,
+};
+
+if('firsname' in person){
+	//true	
+}else{
+	//false
+}
+</script>
+================================
+- nulish coalescing operator
+untuk pengecekan sebuah nilai apakah itu isinya null atau undifined
+ex:
+let parameter;
+let data = parameter ?? "nilai default";
+alert(data);
+//output is "nilai default"
+=================================
+- optional chaining
+untuk pengecekan sebuah 
+misal pengecekan lama nih, dia nilainya ada apa tidak, (nilainya undifined atau null)
+const person = {};
+let country;
+if(person.address !== undifined && person.address !== null){
+	country = person.address.country;
+}
+dan ini lumayan capek kalau ada object lain lagi yang harus kita cek, 
+tapi dengan adanya optional chaining semuanya jadi mudah
+
+const person = {};
+let country = person?.address?.country;
+
+ini tingal pakai tanda ?.
+data ini benar ketika.
+const person = {
+				address:{
+						country: 'indonesia
+					}
+				};
+=====================================================

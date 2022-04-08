@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oject Angkot</title>
+</head>
+<body>
+    <script>
+        function Angkot(sopir, trayek, penumpang=Array(), kas){
+            this.sopir = sopir;
+            this.trayek = trayek;
+            this.penumpang = penumpang;
+            this.kas = kas;
+            this.penumpangNaik = function(namaPenumpang){
+                if(this.penumpang.length == 0){
+                    this.penumpang.push(namaPenumpang);
+                    return this.penumpang;
+                }else{
+                    for(var i=0; i<this.penumpang.length; i++){
+                        if(this.penumpang[i] === namaPenumpang){
+                            console.log('maaf penumpang atas nama: '+namaPenumpang+' sudah naik');
+                            return false;
+                        }else if(this.penumpang[i] == undefined){
+                            this.penumpang[i] = namaPenumpang;
+                            return this.penumpang;
+                        }
+                    }
+                    this.penumpang.push(namaPenumpang);
+                    return this.penumpang;
+                }
+            }
+
+            this.penumpangTurun = function(namaPenumpang, bayar){
+                if(this.penumpang.length == 0){
+                    console.log('belum ada penumpang');
+                    return false;
+                }
+                for(var i= 0; i<this.penumpang.length; i++){
+                    if(this.penumpang[i] === namaPenumpang){
+                        console.log('ada');
+                        this.penumpang[i] = undefined;
+                        this.kas += bayar
+                        return this.penumpang+'-'+this.kas;
+                    }
+                }    
+                console.log('tidak ada penumpang dengan nama :' + namaPenumpang);
+                return false;            
+            }
+        }
+        var angkot1 = new Angkot('azizan', ['gadang', 'arjosari'], [], 0);
+
+       
+    </script>
+</body>
+</html>

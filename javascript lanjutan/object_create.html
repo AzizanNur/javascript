@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //object.crate
+        const methodeMahasiswa={
+            makan: function(porsi){
+                this.energi += porsi;
+                console.log(`halo ${this.nama}, selamat makan`);
+            }
+        }
+        function Mahasiswa(nama, energi){
+            let mahasiswa = Object.create(methodeMahasiswa); //object create ini menggunakan semua properti dari methodeMahasiswa, sehingga tidak perlu di daftarkan satu-satu di function mahasiwa
+            mahasiswa.nama = nama;
+            mahasiswa.energi = energi; 
+            
+            // mahasiswa.makan = methodeMahasiswa.makan(2) //dengan adanya object.create menjadikan ini tidak perlu lagi, karena sudah di inisiasi dan propertinya sudah dibawa didalam object.create(methodMahasiswa);
+            return mahasiswa;       
+        }
+        var aziz = Mahasiswa('azizan', 50);
+    </script>
+</body>
+</html>

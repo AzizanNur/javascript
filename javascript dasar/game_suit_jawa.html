@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game suit jawa</title>
+</head>
+<body>
+    <script>
+        var user = prompt('Pilih salah satu ya.... (ex: gajah, semut, orang)');
+        var comp = Math.random();
+        var ulangi = true;
+        var hasil = '';
+        
+        //computer pilihan acak
+        if(comp <= 0.3){
+            comp = 'semut';
+        }else if(comp >= 0.5 && comp <= 0.7){
+            comp = 'gajah';
+        }else{
+            comp = 'orang';
+        }
+
+        //rumus suit
+        if(user === 'gajah' && comp ==='semut'){
+            hasil = 'Anda Kalah';
+        }else if(user === 'gajah' && comp ==='orang'){
+            hasil = 'Anda Menang';
+        }else if(user === 'semut' && comp ==='gajah'){
+            hasil = 'Anda Menang';
+        }else if(user === 'semut' && comp ==='orang'){
+            hasil = 'Anda Kalah';
+        }else if(user === 'orang' && comp ==='gajah'){
+            hasil = 'Anda Kalah';
+        }else if(user === 'orang' && comp ==='semut'){
+            hasil = 'Anda Menang';
+        }else{
+            hasil = 'Pilihan tidak ada';
+        }
+
+        while(ulangi){
+            alert('Anda memilih '+user+'\n'+' dan komputer memilih '+comp+'\n'+' dan hasilnya adalah: '+ hasil);
+            ulangi = confirm('apakah mau diulangi lagi?');
+            if(ulangi){
+             user = prompt('Pilih salah satu ya.... (ex: gajah, semut, orang)');
+            }
+        }
+        
+
+    </script>    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <Script>
+
+        let txt = "";
+        const d = new Date();
+        const numbers = ['fortuner', 'audi', 'pejero'];
+        numbers.forEach(list_my_car);
+        document.getElementById('demo').innerHTML = d.getDate()+'-'+d.getMonth()+'-'+d.getFullYear();
+
+        function list_my_car(value){
+            if(value === 'audi'){
+                value = 'ini adalah mobilku bro';
+            }
+            txt += value+'<br>';
+        }
+    </Script>
+</body>
+</html>

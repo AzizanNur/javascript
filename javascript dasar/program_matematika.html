@@ -1,0 +1,16 @@
+<html>
+    <script>
+        function penjumlahan(){
+            var hasil = '';
+            hasil = parseInt(document.getElementById('nomer_1').value) + parseInt(document.getElementById('nomer_2').value);
+            document.getElementById('hasil').innerHTML = hasil;
+        }
+    </script>
+    <body>
+        <h2> halo ini adalah program matematika </h2>
+        <input type="text" id="nomer_1" />       
+        <input type="text" id="nomer_2" />        
+        <button onclick="penjumlahan()"> penjumlahan </button>
+        <p id="hasil"></p>
+    </body>
+</html>

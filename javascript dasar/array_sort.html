@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <h2> ini adalah array sort </h2>
+        <button id="proses" onclick="mySort()">proses</button>
+        <button id="proses2" onclick="mySort2()">proses</button>
+       
+        <p id="hasil"></p>
+        <script>
+            const mobil = new Array('pajero', 'fortuner', 'rubicon');
+            
+            let text;
+            mobil.forEach(myFor);
+            document.getElementById('hasil').innerHTML = text;
+            
+            function myFor(value) {
+                text += value + "<br>";
+            }
+
+            function mySort(){
+                mobil.sort();
+                mobil.reverse();
+                document.getElementById('hasil').innerHTML = mobil;
+            }
+
+            function mySort2(){
+                mobil.sort();
+                document.getElementById('hasil').innerHTML = mobil;
+            }
+         </script>
+    </body>
+</html>
